@@ -16,3 +16,6 @@ const insertionSort = (arr)=>{
 
 insertionSort(arr)
 console.log(arr)
+
+
+//Big-O = O(n^2)

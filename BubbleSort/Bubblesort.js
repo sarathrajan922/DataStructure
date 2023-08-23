@@ -13,8 +13,6 @@ const sort = (arr)=> {
         }
         n--
     }while(swapped)
-
 }
-
 sort(array)
 console.log(array)

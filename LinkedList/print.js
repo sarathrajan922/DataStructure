@@ -56,9 +56,9 @@ class LinkedList {
 
 const list = new LinkedList()
 
-// list.prepend(30)
-// list.prepend(40)
-// list.append(10)
-// list.append(5)
+list.prepend(30)
+list.prepend(40)
+list.append(10)
+list.append(5)
 console.log(list)
 console.log(list.print())

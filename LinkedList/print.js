@@ -41,12 +41,24 @@ class LinkedList {
         this.size++;
         
     }
+
+    print(){
+        if(this.isEmpty()) return 'list is empty..'
+        let values = []
+        let curr = this.head
+        while(curr){
+            values.push(curr.value)
+            curr = curr.next
+        }
+        return values
+    }
 }
 
 const list = new LinkedList()
 
-list.prepend(30)
-list.prepend(40)
-list.append(10)
-list.append(5)
+// list.prepend(30)
+// list.prepend(40)
+// list.append(10)
+// list.append(5)
 console.log(list)
+console.log(list.print())

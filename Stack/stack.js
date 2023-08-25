@@ -22,7 +22,7 @@ class Stack{
     }
 
     print(){
-        console.log(this.items)
+        console.log(this.items.toString())
     }
 
     size(){

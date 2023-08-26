@@ -33,9 +33,7 @@ class HashTable{
     get(key){
         const index = this.hash(key)
         // return this.table[index]
-
         let bucket = this.table[index]
-
         if(bucket){
             const sameKey = bucket.find(item => item[0] === key)
             if(sameKey){

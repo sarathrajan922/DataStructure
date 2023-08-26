@@ -48,7 +48,14 @@ class HashTable{
 
     remove(key){
         const index = this.hash(key)
-        this.table[index] = null
+        // this.table[index] = null
+        let bucket = this.table[index]
+        if(bucket){
+            let sameKey = bucket.find(item => item[0] === key)
+            if(sameKey){
+                bucket.splice(bucket.indexOf(sameKey),1)
+            }
+        }
     }
 
     display(){
@@ -66,9 +73,13 @@ table.set('name','sarath')
 table.set('mane','dinson')
 table.set('kk','jlkjlk')
 
-console.log(table.get('mane'))
+
 
 // console.log(table.get('dinson'))
 // console.log(table[3])
 
-// table.display()
+table.display() 
+
+table.set('mane','san')
+
+table.display()

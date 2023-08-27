@@ -3,14 +3,14 @@ console.log(arr)
 
 
 const selectionSort = (arr)=>{
-    for(let i=0; i<arr.length-1; i++){
-        let minIdx = i
+    for(let i=0;i<arr.length-1; i++){
+        let midIdx = i
         for(let j=i+1; j<arr.length; j++){
-            if(arr[j]< arr[minIdx]){
-                minIdx = j
+            if(arr[j] < arr[midIdx]){
+                midIdx = j
             }
         }
-        [arr[i],arr[minIdx]]=[arr[minIdx],arr[i]]
+        [arr[i],arr[midIdx]]=[arr[midIdx],arr[i]]
     }
     return arr
 }

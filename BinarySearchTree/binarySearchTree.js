@@ -89,6 +89,14 @@ class BinaryTree{
           return this.min(root.left)
         }
     }
+
+    max(root){
+        if(!root.right){
+            return root.data
+        }else{
+            return this.max(root.right)
+        }
+    }
 }
 
 
@@ -115,3 +123,4 @@ console.log(BST.search(BST.root,10))
 // BST.preOrder(BST.root)
 BST.postOrder(BST.root)
 console.log(`min value of the tree  `+ BST.min(BST.root))
+console.log(`max value of the tree  `+ BST.max(BST.root))

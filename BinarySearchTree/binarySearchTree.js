@@ -80,6 +80,15 @@ class BinaryTree{
             console.log(root.data);
         }
     }
+
+
+    min(root){
+        if(!root.left){
+            return root.data
+        }else{
+          return this.min(root.left)
+        }
+    }
 }
 
 
@@ -89,7 +98,14 @@ console.log('BST is Empty? '+ BST.isEmpty())
 BST.insert(10)
 BST.insert(20)
 BST.insert(2)
-
+BST.insert(49)
+BST.insert(9)
+BST.insert(12)
+BST.insert(88)
+BST.insert(8)
+BST.insert(1)
+BST.insert(-2)
+BST.insert(-5)
 console.log(BST)
 
 console.log('BST is Empty? '+ BST.isEmpty())
@@ -98,3 +114,4 @@ console.log(BST.search(BST.root,10))
 
 // BST.preOrder(BST.root)
 BST.postOrder(BST.root)
+console.log(`min value of the tree  `+ BST.min(BST.root))

@@ -54,8 +54,31 @@ class BinaryTree{
         }else{
             return this.search(root.right,value)
         }
-    
+    }
 
+    preOrder(root){
+        if(root){
+            console.log(root.data);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+        }
+    }
+
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left);
+            console.log(root.data);
+            this.inOrder(root.right);
+        }
+    }
+
+
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.data);
+        }
     }
 }
 
@@ -72,3 +95,6 @@ console.log(BST)
 console.log('BST is Empty? '+ BST.isEmpty())
 
 console.log(BST.search(BST.root,10))
+
+// BST.preOrder(BST.root)
+BST.postOrder(BST.root)

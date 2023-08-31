@@ -43,6 +43,20 @@ class BinaryTree{
         }
         
     } 
+
+
+    search(root,value){
+        if(!root)return false
+        if(root.data === value){
+            return true;
+        }else if(value < root.data){
+            return this.search(root.left,value)
+        }else{
+            return this.search(root.right,value)
+        }
+    
+
+    }
 }
 
 
@@ -56,3 +70,5 @@ BST.insert(2)
 console.log(BST)
 
 console.log('BST is Empty? '+ BST.isEmpty())
+
+console.log(BST.search(BST.root,10))

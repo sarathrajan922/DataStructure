@@ -16,32 +16,33 @@ class BinaryTree{
     }
 
     insert(value){
-        let newNode = new Node(value);
+        let newNode = new Node(value)
         if(this.isEmpty()){
             this.root = newNode;
             return
         }
-
-        this.insertHelper(this.root,newNode);
+        this.insertHelper(this.root, newNode);
+        return
     }
 
     insertHelper(root,newNode){
         if(root.data > newNode.data){
             if(!root.left){
-                root.left = newNode
+                root.left = newNode;
                 return
             }else{
                 this.insertHelper(root.left,newNode)
             }
         }else{
-           if(!root.right){
-            root.right = newNode
-            return
-           }else{
-            this.insertHelper(root.right,newNode)
-           }
+            if(!root.right){
+                root.right = newNode;
+                return
+            }else{
+                this.insertHelper(root.right,newNode)
+            }
         }
-    }
+        
+    } 
 }
 
 
@@ -53,3 +54,5 @@ BST.insert(20)
 BST.insert(2)
 
 console.log(BST)
+
+console.log('BST is Empty? '+ BST.isEmpty())

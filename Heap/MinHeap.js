@@ -44,6 +44,30 @@ class Heap{
             }
         }
     }
+
+
+    heapify(arr,n,i){
+        let largest = i
+        let L = 2*i+1
+        let R = 2*i+2
+
+        while(L <n && arr[L] < arr[largest]){
+            largest = L
+        }
+
+        while(R <n && arr[R] < arr[largest]){
+            largest = R
+        }
+
+        if(largest !=i){
+            [arr[largest],arr[i]]=[arr[i],arr[largest]]
+            this.heapify(arr,n,largest)
+        }
+        return arr
+
+    }
+   
+
 }
 
 const H = new Heap()
@@ -60,3 +84,14 @@ H.insertValue(17)
 console.log(H.Heap)
 H.delete()
 console.log(H.Heap)
+
+let arr = [...H.Heap]
+console.log('heap')
+console.log(arr)
+let n = arr.length-1
+for(let i=n; i>=0 ;i--){
+    [arr[0],arr[i]]=[arr[i],arr[0]]
+    H.heapify(arr,i,0)
+}
+console.log('sorted')
+console.log(arr)

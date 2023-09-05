@@ -97,6 +97,31 @@ class BinaryTree{
             return this.max(root.right)
         }
     }
+
+
+
+    delete(value){
+        this.deleteNode(this.root,value)
+    }
+
+    deleteNode(root,value){
+        if(!root) return null
+        if(value < root.data){
+            root.left = this.deleteNode(root.left,value)
+        }else if(value > root.right){
+            root.right = this.deleteNode(root.right,value)
+        }else{
+            if(!root.left && !root.right) return null
+            if(!root.left ) return root.right
+            if(!root.right) return root.left
+            
+            root.data = this.min(root.right)
+            root.right = this.deleteNode(root.right,root.data)
+        }
+        return root
+    }
+
+
 }
 
 
@@ -120,7 +145,9 @@ console.log('BST is Empty? '+ BST.isEmpty())
 
 console.log(BST.search(BST.root,10))
 
-// BST.preOrder(BST.root)
+
 BST.postOrder(BST.root)
 console.log(`min value of the tree  `+ BST.min(BST.root))
 console.log(`max value of the tree  `+ BST.max(BST.root))
+BST.delete(1)
+BST.postOrder(BST.root)

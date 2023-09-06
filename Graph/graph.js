@@ -24,14 +24,16 @@ class Graph{
     }
 
     removeVertex(vertex){
-        if(!this.adjList[vertex]) return
+        if(!this.adjList[vertex]) return 
         for(let vertices of this.adjList[vertex]){
-            this.removeEdge(vertex,vertices)
+            // console.log(vertices);
+            this.removeEdge(vertex, vertices)
+            
         }
         delete this.adjList[vertex]
     }
 
-    removeEdge(vertex1,vertex2){
+    removeEdge(vertex1, vertex2){
         this.adjList[vertex1].delete(vertex2)
         this.adjList[vertex2].delete(vertex1)
     }
@@ -52,6 +54,6 @@ G.addEdge(89,20,true)
 
 console.log(G.adjList)
 
-G.removeVertex(30)
+G.removeVertex(49)
 
 console.log(G.adjList)

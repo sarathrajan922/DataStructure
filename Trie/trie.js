@@ -35,6 +35,18 @@ class Trie{
         return curr.isEnd
     }
 
+    searchWith(word){
+        let curr = this.root
+        for(let i=0; i<word.length ; i++){
+            let char = word[i]
+            if(!curr.children.has(char)){
+                return false
+            }
+            curr = curr.children.get(char)
+        }
+        return true
+    }
+
 
 
     print(node =this.root,word = ''){
@@ -57,5 +69,6 @@ T.insert('rajan')
 
 T.print()
 
-console.log(T.search("rajan"))
+console.log(T.searchWith("rajan"))
+
 

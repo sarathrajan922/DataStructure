@@ -22,7 +22,20 @@ class Trie{
         curr.isEnd = true
     }
 
-    
+
+    search(word){
+        let curr = this.root
+        for(let i = 0; i< word.length ; i++){
+            let char = word[i]
+            if(!curr.children.has(char)){
+                return false
+            }
+            curr = curr.children.get(char)
+        }
+        return curr.isEnd
+    }
+
+
 
     print(node =this.root,word = ''){
         if(node.isEnd){
@@ -43,4 +56,6 @@ T.insert('sreedevi')
 T.insert('rajan')
 
 T.print()
+
+console.log(T.search("rajan"))
 

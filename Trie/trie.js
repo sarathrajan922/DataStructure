@@ -67,8 +67,10 @@ T.insert("saranya")
 T.insert('sreedevi')
 T.insert('rajan')
 
+
 T.print()
 
 console.log(T.searchWith("rajan"))
+console.log(T.root)
 
 

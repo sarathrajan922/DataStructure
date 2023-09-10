@@ -81,6 +81,21 @@ class BinaryTree{
         }
     }
 
+    levelOrder(){
+       let queue = []
+       queue.push(this.root)
+       while(queue.length){
+        let curr = queue.shift();
+        console.log(curr.data);
+        if(curr.left){
+            queue.push(curr.left)
+        }
+        if(curr.right){
+            queue.push(curr.right)
+        }
+       }
+    }
+
 
     min(root){
         if(!root.left){
@@ -121,6 +136,8 @@ class BinaryTree{
         return root
     }
 
+  
+
 
 }
 
@@ -151,3 +168,7 @@ console.log(`min value of the tree  `+ BST.min(BST.root))
 console.log(`max value of the tree  `+ BST.max(BST.root))
 BST.delete(1)
 BST.postOrder(BST.root)
+
+console.log("--BFS--")
+
+BST.levelOrder()

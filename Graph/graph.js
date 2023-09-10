@@ -23,6 +23,12 @@ class Graph{
         }
     }
 
+    dispaly(){
+    for(let vertex in this.adjList){
+        console.log(vertex + "=> "+ [...this.adjList[vertex]])
+    }
+    }
+
     removeVertex(vertex){
         if(!this.adjList[vertex]) return 
         for(let vertices of this.adjList[vertex]){
@@ -57,3 +63,5 @@ console.log(G.adjList)
 G.removeVertex(49)
 
 console.log(G.adjList)
+
+G.dispaly()

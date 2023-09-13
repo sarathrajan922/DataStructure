@@ -88,6 +88,7 @@ console.log(H.Heap)
 let arr = [...H.Heap]
 console.log('heap')
 console.log(arr)
+
 let n = arr.length-1
 for(let i=n; i>=0 ;i--){
     [arr[0],arr[i]]=[arr[i],arr[0]]
@@ -95,3 +96,14 @@ for(let i=n; i>=0 ;i--){
 }
 console.log('sorted')
 console.log(arr)
+
+let arr1 = [883,4,66,3,77,5,65,32];
+
+console.log("arr1")
+console.log(arr1)
+let n1 = arr.length;
+for(let i=0; i<Math.floor(n/2); i++){
+    H.heapify(arr,n,i);
+}
+console.log("heap arr1")
+console.log(arr1)

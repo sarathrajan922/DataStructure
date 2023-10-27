@@ -1,6 +1,6 @@
-let arr = [40,9,55,-1,66]
+let arr = [40,9,55,-1,66];
 
-const binarySort = (arr)=>{
+const Bsort = (arr)=>{
     let n = arr.length -1
     let swapped;
     do{
@@ -16,4 +16,4 @@ const binarySort = (arr)=>{
     return arr
 }
 
-console.log(binarySort(arr))
+console.log(Bsort(arr))

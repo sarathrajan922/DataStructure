@@ -7,6 +7,7 @@ let set = new Set();
 arr.forEach((obj)=>{
     let i = obj['a'];
     let increment = obj['a'] < obj['b'] ? true : false;
+
     if(increment){
         while(i <= obj['b']){
             !set.has(i) && console.log(i);

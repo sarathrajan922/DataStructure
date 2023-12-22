@@ -13,4 +13,7 @@ const frequency = (arr)=>{
     return set;
 }
 
+
+
+
 console.log(frequency(arr))

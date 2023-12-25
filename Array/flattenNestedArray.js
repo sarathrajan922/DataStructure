@@ -7,7 +7,7 @@ const arr = [1,[2,3],[4,[5,6]]]
 
 const flatten = (arr)=>{
    let flattenArray = []
-   for(let i=0; i<arr.length;i++){
+   for(let i=0;i<arr.length;i++){
     if(Array.isArray(arr[i])){
         flattenArray = flattenArray.concat(flatten(arr[i]))
     }else{

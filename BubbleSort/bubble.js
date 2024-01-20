@@ -18,19 +18,18 @@ const Bsort = (arr)=>{
 
 
 const sort = (arr)=>{
-    let n = arr.length - 1;
-    let swapped = false;
-
-    do{
-        for(let i =0 ; i< n; i++){
-            if(arr[i]> arr[i+1]){
-                [arr[i],arr[i+1]]=[arr[i+1],arr[i]]
-                swapped = true
-            }
+   let n= arr.length-1;
+   let swapped = false;
+   do{
+    for(let i=0; i<n; i++){
+        if(arr[i]> arr[i+1]){
+            [arr[i],arr[i+1]]=[arr[i+1],arr[i]]
+            swapped = true
         }
         n--
-    }while(swapped)
-    return arr
+    }
+   }while(swapped)
+   return arr
 }
 console.log(Bsort(arr))
 console.log(sort(arr))
